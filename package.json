@@ -1,0 +1,25 @@
+{
+  "name": "p2p-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "create": "node create-records.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@roamhq/wrtc": "^0.8.0",
+    "axios": "^1.8.4",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.5.0",
+    "p2p-server-sync": "https://github.com/KORandi/p2p-server-sync",
+    "simple-peer": "^9.11.1",
+    "socket.io-client": "^4.8.1",
+    "uuid": "^11.1.0"
+  }
+}
