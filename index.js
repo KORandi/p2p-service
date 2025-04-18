@@ -7,6 +7,8 @@ const bodyParser = require("body-parser");
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dbPath = process.env.DB_PATH || "./radata";
 const peers = process.env.PEERS ? process.env.PEERS.split(",") : [];
+const serverCa = process.env.SERVER_CA || "peer1";
+const masterKey = process.env.PSK;
 
 const p2p = new P2PServer({
   port,
@@ -14,6 +16,16 @@ const p2p = new P2PServer({
   peers,
   sync: {
     antiEntropyInterval: 10 * 60 * 1000, // Once per 10 minutes
+  },
+  security: {
+    masterKey,
+  },
+  tls: {
+    enabled: true,
+    keyPath: `ca/servers/${serverCa}/peer1.key`,
+    certPath: `ca/servers/${serverCa}/peer1.crt`,
+    caPath: "ca/ca.crt",
+    requireClientCert: true,
   },
 });
 

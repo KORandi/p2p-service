@@ -7,8 +7,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 // Configuration
-const API_URL = process.env.API_URL || "http://localhost:8766"; // Default to localhost if not specified
-const NUM_CARDS = 50;
+const API_URL = process.env.API_URL || "http://localhost:8765"; // Default to localhost if not specified
+const NUM_CARDS = 1;
 const BATCH_SIZE = 100; // Number of cards to create per batch
 const DELAY_BETWEEN_BATCHES_MS = 200; // Delay between batches to avoid overwhelming the server
 
